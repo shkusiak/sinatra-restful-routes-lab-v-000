@@ -6,9 +6,7 @@ class ApplicationController < Sinatra::Base
 
   get '/recipes/new' do
     # displays create recipe form
-    @recipe = Recipe.create(:name => params[:name], :ingredients => params[:ingredients], :cook_time => params[:cook_time])
-    @recipe.save
-    erb :index
+    erb :new
   end
 
   get '/recipes' do
