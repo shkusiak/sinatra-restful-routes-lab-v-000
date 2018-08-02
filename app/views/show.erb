@@ -6,6 +6,6 @@
 
 <!-- contains links to delete the recipe and deletes via a DELETE request...  -->
 <form action="/recipes/<%=@recipe.id%>/delete" method="post">
-  <input id="hidden" type="/hidden" name="_method" value="delete">
+  <input id="hidden" type="hidden" name="_method" value="delete">
   <input type="submit" value="delete">
 </form>
