@@ -45,9 +45,9 @@ class ApplicationController < Sinatra::Base
 
   delete '/recipes/:id/delete' do
     # deletes one recipe based on id in url
+    binding.pry
     @recipe = Recipe.find_by_id(params[:id])
     @recipe.delete
-    binding.pry
     redirect to '/recipes'
   end
 
