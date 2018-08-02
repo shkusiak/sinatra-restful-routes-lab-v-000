@@ -1,1 +1,7 @@
-<h1>Display All Recipes...<%= @recipes %></h1>
+<h1>Display All Recipes...</h1>
+<% @recipes.each do |r| %>
+  <%= r.id %>
+  <%= r.name %>
+  <%= r.ingredients %>
+  <%= r.cook_time %>
+  <% end %>
