@@ -40,12 +40,12 @@ class ApplicationController < Sinatra::Base
   post '/recipes' do
     # replaces base on id in url
     @recipe = Recipe.create(params)
+    binding.pry
     redirect to "/recipes/#{@recipe.id}"
   end
 
   delete '/recipes/:id/delete' do
     # deletes one recipe based on id in url
-    binding.pry
     @recipe = Recipe.find_by_id(params[:id])
     @recipe.delete
     redirect to '/recipes'
