@@ -40,7 +40,6 @@ class ApplicationController < Sinatra::Base
   post '/recipes' do
     # replaces base on id in url
     @recipe = Recipe.create(params)
-    binding.pry
     redirect to "/recipes/#{@recipe.id}"
   end
 
