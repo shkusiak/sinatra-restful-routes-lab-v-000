@@ -23,6 +23,8 @@ class ApplicationController < Sinatra::Base
 
   get '/recipes/:id/edit' do
     # displays edits based on id in url
+    @recipe = Recipe.find_by_id(params[:id])
+    erb :edit
   end
 
   patch '/recipes/:id' do
@@ -36,6 +38,8 @@ class ApplicationController < Sinatra::Base
 
   post '/recipes' do
     # replaces base on id in url
+    @recipe = Recipe.create(:name => params[:name], :ingredients => params[:ingredients], :cook_time => params[:cook_time])
+    redirect to "/recipes/#{@recipe.id}"
   end
 
   delete '/recipes/:id/delete' do
