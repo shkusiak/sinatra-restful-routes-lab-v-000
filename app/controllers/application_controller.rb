@@ -17,7 +17,7 @@ class ApplicationController < Sinatra::Base
 
   get '/recipes/:id' do
     # displays one recipe based on id in url
-    @recipe = Recipe.find_by_id(params[id])
+    @recipe = Recipe.find_by_id(params[:id])
     erb :show
   end
 
